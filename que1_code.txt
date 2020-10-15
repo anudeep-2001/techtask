@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UFT_8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<script src="http://localhost:35729/liverload.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Inshorts page</title>
+<style>
+
+.forpad{
+   padding:0px 2px 0px 2px;
+}
+.head {
+border-style : none none solid none;
+ border-width : 0.1px;
+ display : flex;
+ justify-content : space-between;
+ align-content: centre;
+ position:relative;
+}
+
+.foot{
+ border-style : solid none none none;
+ border-width : 0.1px;
+  display : flex;
+  padding: 0px 10px 0px 10px;
+ justify-content : space-between;
+ margin-top : 5px solid black;
+ align-content: bottom;
+ text-align : bottom;
+ position:relative;
+
+
+}
+.circle{
+        width: 12px;
+        height: 25px;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 17px;
+        color:#fff; 
+        background-color:#32cf60;
+        margin : 0px 0px 0px 20px;
+        dispaly : inline-block;
+
+}
+.bor{
+   font-size:15px;
+   color:Dodgerblue;
+   align-content:centre;
+}
+.col{
+color:Dodgerblue;
+}
+.page1{
+  position : absolute;
+  top : 0;
+  left : 0;
+  width : 100vw;
+  height : 100vh;
+  
+}
+.page2{
+  display : none;
+  position : absolute;
+  top : 0;
+  left : 100%;
+   width : 100vw;
+  height : 100vh;
+}
+body {
+  background-color: white;
+  color: black;
+  font-family: Roboto;
+  height:auto;
+  width:auto;
+}
+</style>
+</head>
+
+<body>
+<div class="page1"
+     id="page1"
+     ontouchstart="p1handleTouchStart(event)"
+     ontouchmove="p1handleTouchMove(event)"
+     ontouchend="p1handleTouchEnd(event)">
+<div class="head">
+
+<pre>
+<span class="col">&lt;</span> Discover 
+</pre>
+<pre>
+<b>My Feed</b>
+<strong class="bor"> ___</strong>
+</pre>
+<p class="col">
+&#10227;
+</p>
+</div>
+<br>
+<img src="techtask.jpeg" alt="Viral image shows scale of melting ice in Greenland" style="width:100%" >
+<br>
+<strong class="forpad">Viral image shows scale of melting ice in Greenland </strong>
+<p class="forpad" style="padding-bottom:50px">A photo showing sled dogs wading through water ankle-deep on top of a melting ice sheet in Greenland has gone viral. The picture taken by Steffen Olsen from the centre for Ocean and Ice at the Danish Meteorological Institute shows the scale of melting ice in Greenland. Olsen said the ice sheet beneath the water was 1.2 metres thick.<br><small style="color:Gray" >short by Ankush Verma</small></p>
+<footer>
+<div class="foot">
+
+<pre>
+<span style="color:green;margin:0px 0px 0px 20px"><i style="font-size:100%"class="fa fa-question-circle iconleft" ></i></span>
+<p font-family="Times-roman">Relevance</p>
+</pre>
+<pre>
+<span class="fa col" style="padding:0px 0px 0px 10px">&#xf1e0;</span>
+<p text-align="centre">Share</p>
+</pre>
+
+<pre>
+<span class="fa col" style="padding:0px 0px 0px 20px">&#xf097;</span>
+<p>Bookmark</p>
+</pre>
+
+</div>
+</footer>
+
+</div>
+
+<div class="page2"
+     id="page2"
+     ontouchstart="p2handleTouchStart(event)"
+     ontouchmove="p2handleTouchMove(event)"
+     ontouchend="p2handleTouchEnd(event)">
+     <div class="head">
+
+<pre>
+<span class="col">&lt;</span> Discover 
+</pre>
+
+<pre>
+<b>My Feed</b>
+<strong class="bor"> ___</strong>
+</pre>
+<p class="col">
+&#10227;
+</p>
+</div>
+<br>
+<img src="techtask(1).jpeg" alt="Stephen Fleming picture" style="width:100%" >
+<br>
+<strong class="forpad">Needed to do something different: Fleming on curran opening the batting </strong>
+<p class="forpad" style="padding-bottom:50px">CSK coach Stephen Fleming said the decision to send Sam Curran out to open against SRH "was borne out of a need to do something different." Fleming added, "The trends of losses were becoming too familiar so we just wanted to get Sam in the game.<br><small style="color:Gray" >short by Unknown</small></p>
+<footer>
+<div class="foot">
+
+<pre>
+<span style="color:green;margin:0px 0px 0px 20px"><i style="font-size:100%"class="fa fa-question-circle iconleft" ></i></span>
+<p font-family="Times-roman">Relevance</p>
+</pre>
+
+
+<pre>
+<span class="fa col" style="padding:0px 0px 0px 10px">&#xf1e0;</span>
+<p text-align="centre">Share</p>
+</pre>
+
+<pre>
+<span class="fa col" style="padding:0px 0px 0px 20px">&#xf097;</span>
+<p>Bookmark</p>
+</pre>
+
+</div>
+</footer>
+</div>
+
+
+</body>
+<script>
+   var p1 = document.getElementById('page1');
+   var p2 = document.getElementById('page2');
+   var startingX;
+   function p1handleTouchStart(evt){
+     startingX=evt.touches[0].clientX;
+     
+   };
+   
+   function p1handleTouchMove(evt){
+     var touch = evt.touches[0];
+     var change = startingX - touch.clientX;
+     if(change<0){
+     return;
+     }
+     
+     p1.style.left = '-' + change + 'px';
+     p2.style.display = 'block';
+     p2.style.left = (screen.width - change) + 'px';
+     evt.preventDefault();
+   };
+   
+   function p1handleTouchEnd(evt){
+         var change = startingX - evt.changedTouches[0].clientX;
+         var threshold = screen.width / 3;
+         if(change<threshold){
+           p1.style.left = 0;
+           p2.style.left = '100%'; 
+           p2.style.display = 'none';
+         } else {
+           p1.style.transition = 'all .3s';
+           p2.style.transition = 'all .3s';
+           p1.style.left = '-100%';
+           p2.style.left = '0';
+           p2.style.display = 'block';
+         }
+     
+   };
+   
+   function p2handleTouchStart(evt){
+     startingX=evt.touches[0].clientX;
+     p1.style.transition  = '';
+     p2.style.transition = '';
+     p1.style.display  = 'none';
+   };
+   
+   function p2handleTouchMove(evt){
+     var touch = evt.touches[0];
+     var change = touch.clientX - startingX ;
+     if(change < 0){
+     return;
+     }
+     
+     p1.style.display = 'block';
+     p1.style.left = (change - screen.width) + 'px';
+     p2.style.left = change + 'px';
+     evt.preventDefault();
+   };
+   
+   function p2handleTouchEnd(evt){
+         var change =   evt.changedTouches[0].clientX - startingX;
+         var half = screen.width / 4;
+         if(change < half){
+           p1.style.left = '-100%';
+           p1.style.display = 'none';
+           p2.style.left = '0'; 
+           
+         } else {
+           p1.style.transition = 'all .3s';
+           p2.style.transition = 'all .3s';
+           p1.style.left = '0';
+           p2.style.left = '100%';
+         }
+     
+   };
+</script>
+</html>
+
